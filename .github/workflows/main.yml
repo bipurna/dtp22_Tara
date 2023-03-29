@@ -19,7 +19,7 @@ jobs:
         username: ${{ secrets.FTP_USER }}
         password: ${{ secrets.FTP_PASS }}
         local-dir: ./public/
-jobs:
+
   build-page:
   name: ⚙️ Build page
   runs-on: ubuntu-latest
