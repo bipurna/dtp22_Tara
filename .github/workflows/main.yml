@@ -1,11 +1,13 @@
-on: push
+on: 
+  push:
+    branches:
+      - main
+      - 'releases/v*'
 name: 🚀 Deploy website on push
 jobs:
   web-deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
-    only:
-      - main
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
