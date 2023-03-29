@@ -3,8 +3,9 @@ name: 🚀 Deploy website on push
 jobs:
   web-deploy:
     name: 🎉 Deploy
-    if: branch = main
     runs-on: ubuntu-latest
+    only:
+      - main
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
