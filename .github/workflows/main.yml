@@ -1,7 +1,7 @@
 on: 
   push:
     tags:
-      - 'releases/v*'
+      - 'release/v*'
 
 name: 🚀 Deploy website on push
 jobs:
