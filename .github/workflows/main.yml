@@ -36,7 +36,7 @@ jobs:
         draft: false
         prerelease: false
         body: ''
-        assets: |
+        assets: /
           public/DevOps-Demo-${{ github.ref }}.zip
     - name: Download artifacts
       uses: actions/download-artifact@v3
