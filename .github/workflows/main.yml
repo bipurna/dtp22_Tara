@@ -1,6 +1,6 @@
-on: 
+on:
   push:
-    tags: 
+    tags:
       - '**'
 name: 🚀 Deploy website on push
 jobs:
@@ -29,7 +29,7 @@ jobs:
       uses: actions/checkout@v3
     - name: Download artifacts
       uses: actions/download-artifact@v3
-      with: 
+      with:
         name: public-page
         path: public
     - name: 📂 Sync files
