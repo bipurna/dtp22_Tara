@@ -51,18 +51,10 @@ jobs:
     - name: Upload release assets
       uses: actions/upload-release-asset@v1.0.2
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        owner: ${{ github.repository_owner }}
-        repo: ${{ github.event.repository.name }}
-        tag: ${{ github.ref }}
-        releaseName: Version ${{ github.ref }}
-        draft: false
-        prerelease: false
-        body: ''
-        assets:
-            name: DevOps-Demo-${{ github.ref }}.zip
-            path: DevOps-Demo-${{ github.ref }}.zip
-            content_type: application/zip
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./DevOps-Demo-${{ github.ref }}.zip
+        asset_name: DevOps-Demo-${{ github.ref }}.zip
+        asset_content_type: application/zip
   web-deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
