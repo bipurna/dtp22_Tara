@@ -50,7 +50,7 @@ jobs:
         cd ..
     - name: Upload Release
       uses: ncipollo/release-action@v1
-    with:
+      with:
       artifacts: "release.zip"
   web-deploy:
     name: 🎉 Deploy
