@@ -52,6 +52,7 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         artifacts: "release.zip"
+        replacesArtifacts: true
   web-deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
