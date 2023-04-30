@@ -1,14 +1,14 @@
-		site_name: Demo Seite von Tara
-		site_url: http://gbs.niederer.swiss/dta22/Tara
-		theme:
-		  name: material
-		  palette:
-		    scheme: slate
-		    primary: deep purple
-		  features:
-		    - navigation.tabs
-		    - navigation.tabs.sticky
-		    - navigation.top
+site_name: Demo Seite von Tara
+site_url: http://gbs.niederer.swiss/dta22/Tara
+theme:
+	name: material
+	palette:
+		scheme: slate
+		primary: deep purple
+		features:
+      - navigation.tabs
+      - navigation.tabs.sticky
+      - navigation.top
 		nav:
 		  - Home: index.md
 		  - Details: details.md

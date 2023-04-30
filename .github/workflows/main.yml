@@ -1,26 +1,44 @@
-on: 
-  push:
-    tags:
-      - 'release/v*'
-
+on: 
+  push:
+    tags: 
+      - '**'
 name: 🚀 Deploy website on push
-build-page:
-  name: ⚙️ Build page
-  runs-on: ubuntu-latest
-  steps:
-  - name: 🚚 Get code from repository
-    uses: actions/checkout@v3
-  
-  - name: ⚙️ Building web page
-    run: |
-        pip install mkdocs mkdocs-material
-        mkdocs build --site-dir "public/"
-  - name: 💾 Storing generated page for later usage
-    uses: actions/upload-artifact@v3
-    with: 
-      name: public-page
-      path: public
-      retention-days: 0
+jobs:
+  build-page:
+    name: Build-page
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get code from repository
+      uses: actions/checkout@v3
+    - name: Building web page
+      run: |
+          pip install mkdocs mkdocs-material
+          mkdocs build --site-dir "public/"
+    - name: Storing generated page for later usage
+      uses: actions/upload-artifact@v3
+      with:
+        name: public-page
+        path: public
+        retention-days: 0
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    needs: Build-page
+    steps:
+    - name: Get latest code
+      uses: actions/checkout@v3
+    - name: Download artifacts
+      uses: actions/download-artifact@v3
+      with: 
+        name: public-page
+        path: public
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: winweb20.servicehoster.ch
+        username: ${{ secrets.FTP_USER }}
+        password: ${{ secrets.FTP_PASS }}
+        local-dir: ./public/
     
    
       
