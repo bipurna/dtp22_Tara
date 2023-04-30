@@ -60,7 +60,7 @@ jobs:
         prerelease: false
         body: ''
         assets:
-          - name: DevOps-Demo-${{ github.ref }}.zip
+            name: DevOps-Demo-${{ github.ref }}.zip
             path: DevOps-Demo-${{ github.ref }}.zip
             content_type: application/zip
   web-deploy:
