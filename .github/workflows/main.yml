@@ -26,7 +26,7 @@ jobs:
     needs: build-page
     steps:
     - name: Create Release
-      uses: ncipollo/release-action@v1.5.2
+      uses: ncipollo/release-action@v1.12.0
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         owner: ${{ github.repository_owner }}
