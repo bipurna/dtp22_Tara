@@ -51,7 +51,7 @@ jobs:
     - name: Upload Release
       uses: ncipollo/release-action@v1
       with:
-      artifacts: "release.zip"
+        artifacts: "release.zip"
   web-deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
