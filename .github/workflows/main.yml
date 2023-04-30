@@ -53,6 +53,7 @@ jobs:
       with:
         artifacts: "release.zip"
         replacesArtifacts: true
+        removeArtifacts: true
   web-deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
