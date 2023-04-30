@@ -47,7 +47,7 @@ jobs:
       run: |
         mkdir -p ../DevOps-Demo-refs/tags/release/
         cd public
-        zip -r ../DevOps-Demo-${{ github.ref }}.zip *
+        zip -r ../DevOps-Demo-refs/tags/release/v23.zip *
         cd ..
     - name: Upload release assets
       uses: actions/upload-release-asset@v1.0.2
