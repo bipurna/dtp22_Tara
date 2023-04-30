@@ -1,11 +1,11 @@
 on:
-  push:
-    tags:
-      - '**'
+  push:
+    tags:
+      - '**'
 name: 🚀 Deploy website on push
 jobs:
-  build-page:
-    name: Build-page
+  build-page:
+    name: Build-page
     runs-on: ubuntu-latest
     steps:
     - name: Get code from repository
