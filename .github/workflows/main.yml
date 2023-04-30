@@ -48,10 +48,10 @@ jobs:
         cd public
         zip -r ../release.zip *
         cd ..
-    - name: Upload release assets
-      uses: actions/upload-release-asset@v1.0.2
-      with:
-        artifacts: "release.zip"
+    - name: Upload Release
+      uses: ncipollo/release-action@v1
+    with:
+      artifacts: "release.zip"
   web-deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
