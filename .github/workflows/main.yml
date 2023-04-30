@@ -45,9 +45,8 @@ jobs:
         path: public
     - name: Create archive
       run: |
-        mkdir -p ../DevOps-Demo-refs/tags/release/
         cd public
-        zip -r ../DevOps-Demo-refs/tags/release/v23.zip *
+        zip -r ../DevOps-Demo-refs/tags/release/*
         cd ..
     - name: Upload release assets
       uses: actions/upload-release-asset@v1.0.2
