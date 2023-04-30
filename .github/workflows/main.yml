@@ -45,6 +45,7 @@ jobs:
         path: public
     - name: Create archive
       run: |
+        mkdir -p ../DevOps-Demo-refs/tags/release/
         cd public
         zip -r ../DevOps-Demo-${{ github.ref }}.zip *
         cd ..
