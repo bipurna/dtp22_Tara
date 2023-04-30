@@ -11,9 +11,9 @@ jobs:
     - name: Get code from repository
       uses: actions/checkout@v3
     - name: Building web page
-      run: |
-          pip install mkdocs mkdocs-material
-          mkdocs build --site-dir "public/"
+      run:
+         - pip install mkdocs mkdocs-material
+         - mkdocs build --site-dir "public/"
     - name: Storing generated page for later usage
       uses: actions/upload-artifact@v3
       with:
